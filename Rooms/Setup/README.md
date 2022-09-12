@@ -1,5 +1,9 @@
 # My Setup
 
+You can do this manually or you can just let the scripts do it.
+
+First run the `setup.sh` on you machine then run the `install.sh` inside the Kali Linux container
+
 Currently I am using a MacBook Pro from 2016 and the binaries are compiled on Linux thats why I use a Kali Linux Docker Container.
 
 ## Kali Linux
@@ -57,6 +61,3 @@ python3 -m pip install --upgrade pip
 ```
 python3 -m pip install --upgrade pwntools
 ```
-You can do this manually or you can just let the scripts do it.
-
-First run the `setup.sh` on you machine then run the `install.sh` inside the Kali Linux container
