@@ -18,14 +18,14 @@ docker pull kalilinux/kali-rolling
 
 To run the container
 ```
-docker run --name NAME -dit -p PORT:PORT kalilinux/kali-rolling:latest
+docker run --name kali -dit -p PORT:PORT kalilinux/kali-rolling:latest
 ```
 To use Kali Linux run
 ```    
-docker exec -it NAME /bin/bash 
+docker exec -it kali /bin/bash 
 ```
 
-replace *NAME* with a name for your container
+replace *kali* with a name for your container
 
 After running the Terminal you need to update and upgrade apt
 ```
@@ -57,3 +57,6 @@ python3 -m pip install --upgrade pip
 ```
 python3 -m pip install --upgrade pwntools
 ```
+You can do this manually or you can just let the scripts do it.
+
+First run the `setup.sh` on you machine then run the `install.sh` inside the Kali Linux container
