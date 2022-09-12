@@ -44,7 +44,7 @@ git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh
 
 
 ### Python
-Install Python
+Install [Python](https://www.python.org)
 ```
 apt install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential 
 ```
