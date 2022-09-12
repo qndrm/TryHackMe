@@ -29,7 +29,7 @@ To use Kali Linux run
 docker exec -it kali /bin/bash 
 ```
 
-replace *kali* with a name for your container
+replace `kali` with a name for your container
 
 After running the Terminal you need to update and upgrade apt
 ```
