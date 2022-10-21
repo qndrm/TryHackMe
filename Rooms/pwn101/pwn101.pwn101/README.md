@@ -16,13 +16,13 @@ chmod +x pwn101.pwn101
 ```
 Now let's just run it and input a random number of A's
 
-![Start pwn101.pwn101](https://github.com//qndrm/TryHackMe/tree/main/Rooms/pwn101/pwn101.pwn101/picturesstart-pwn101.png "Start the program")
+![Start pwn101.pwn101](https://github.com/qndrm/TryHackMe/tree/main/Rooms/pwn101/pwn101.pwn101/picturesstart-pwn101.png "Start the program")
 
 Okay as it seems the program terminated perfectly fine.
 
 Let's use gdb to disassemble some parts of the program to see what it is doing.
 
-![disassemble main](https://github.com//qndrm/TryHackMe/tree/main/Rooms/pwn101/pwn101.pwn101/picturesdisassemble-main.png "disassemble main")
+![disassemble main](https://github.com/qndrm/TryHackMe/tree/main/Rooms/pwn101/pwn101.pwn101/picturesdisassemble-main.png "disassemble main")
 
 In line <+4> we can see that the stack is being pushed 0x40 (64<sub>10 (in decimal)</sub>) bytes down meaning the stack has 64 bytes of storage.
 
