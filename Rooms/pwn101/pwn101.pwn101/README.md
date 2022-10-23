@@ -57,5 +57,28 @@ Now we give let's try a input of letters beginning with A's
 ![Input](https://github.com/qndrm/TryHackMe/blob/main/Rooms/pwn101/pwn101.pwn101/pictures/give-input.png "give input")
 
 After we press enter the program will stop at our breakpoint
+
 ![Breakpoint](https://github.com/qndrm/TryHackMe/blob/main/Rooms/pwn101/pwn101.pwn101/pictures/breakpoint.png "breakpoint")
 
+We can see that our input starts at *0x7fff9a283ce0* and the value we want to manipulate is at *0x7fff9a283d18*
+
+Doing some quick [math](https://www.calculator.net/hex-calculator.html?number1=7fff9a283d18&c2op=-&number2=7fff9a283ce0&calctype=op&x=106&y=26) we can see that 0x7fff9a283d18 - 0x7fff9a283ce0 is 56<sub>10</sub>.
+This means the space between our start and the target is 56 bytes and we need another 8 bytes to overwrite the target.
+
+So let's run it again with 64 A`s as input and continue the program with continue or just c
+
+```shell
+pwndbg> continue
+```
+
+We can examine the stack now and see that the 0x590 has been overwriten with A's (0x41)
+
+![Stack](https://github.com/qndrm/TryHackMe/blob/main/Rooms/pwn101/pwn101.pwn101/pictures/stack.png "Stack")
+
+Now you have a shell running inside of gdb give it a command to see if it works.
+
+![Shell](https://github.com/qndrm/TryHackMe/blob/main/Rooms/pwn101/pwn101.pwn101/pictures/shell.png "Shell")
+
+**It works !**
+
+Now let's write the exploit...
